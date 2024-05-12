@@ -8,9 +8,20 @@ function ToDoList() {
     setNewTask(event.target.value)
   }
 
-  function addTask() {}
+  function addTask() {
 
-  function deleteTask(index) {}
+    if(newTask.trim() !== ""){
+        setTask (t => [...t, newTask])
+        setNewTask("")
+    }
+
+
+  }
+
+  function deleteTask(index) {
+    const updatedTasks = tasks.filter((_, i) => i !== index);
+    setTask(updatedTasks);
+  }
 
   function moveTaskUp(index) {}
 
