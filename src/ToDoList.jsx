@@ -23,9 +23,23 @@ function ToDoList() {
     setTask(updatedTasks);
   }
 
-  function moveTaskUp(index) {}
+  function moveTaskUp(index) {
+    if(index > 0){
+        const updatedTasks = [...tasks];
+        [updatedTasks[index], updatedTasks[index - 1]] =
+        [ updatedTasks[index - 1] , updatedTasks[index]]
+        setTask(updatedTasks)
+    }
+  }
 
-  function moveTaskDown(index) {}
+  function moveTaskDown(index) {
+    if(index < tasks.length - 1){
+        const updatedTasks = [...tasks];
+        [updatedTasks[index], updatedTasks[index + 1]] =
+        [ updatedTasks[index + 1] , updatedTasks[index]]
+        setTask(updatedTasks)
+    }
+  }
 
   return (
         <div className="to-do-list">
